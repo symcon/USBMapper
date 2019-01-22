@@ -1,0 +1,12 @@
+{
+	"id": "{CFA5976F-9F73-4140-B54F-FB7ABF1A7A1B}",
+	"author": "Symcon GmbH",
+	"name": "USBMapper",
+	"url": "www.symcon.de",
+	"compatibility": {
+		"version": "4.2"
+	},
+	"version": "1.0",
+	"build": 0,
+	"date": 0
+}
