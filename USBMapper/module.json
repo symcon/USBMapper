@@ -10,5 +10,6 @@
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],
-    "prefix": "USBM"
+    "prefix": "USBM",
+    "url": "https://github.com/symcon/USBMapper/tree/master/USBMapper"
 }
