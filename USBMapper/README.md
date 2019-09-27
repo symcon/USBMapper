@@ -24,8 +24,8 @@ Das Modul setzt automatisch den korrekten USB-Port zu den eingetragenen Serial-P
 
 ### 3. Software-Installation
 
-* Über den Modul Store das Modul USB-Mapper installieren.
-* Alternativ über das Modul Control folgende URL hinzufügen:
+* Über den Module Store das Modul USB-Mapper installieren.
+* Alternativ über das Module Control folgende URL hinzufügen:
 `https://github.com/symcon/USBMapper`  
 
 ### 4. Einrichten der Instanzen in IP-Symcon
