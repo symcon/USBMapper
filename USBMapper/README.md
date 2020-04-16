@@ -30,7 +30,7 @@ Das Modul setzt automatisch den korrekten USB-Port zu den eingetragenen Serial-P
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
-- Unter "Instanz hinzufügen" ist das 'USBMapper'-Modul unter dem Hersteller '(Kern)' aufgeführt.  
+- Unter "Instanz hinzufügen" kann das 'USBMapper'-Modul mithilfe der Schnellsuche gefunden werden.  
 
 __Konfigurationsseite__:
 
