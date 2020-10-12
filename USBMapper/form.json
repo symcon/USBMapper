@@ -14,7 +14,7 @@
 			"direction": "ascending"
 		},
 		"columns": [{
-			"label": "ID",
+			"label": "Serial Port",
 			"name": "ID", 
 			"width": "60px",
 			"add": 0,
