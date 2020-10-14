@@ -19,7 +19,7 @@ Das Modul setzt automatisch den korrekten USB-Port zu den eingetragenen Serial-P
 
 ### 2. Voraussetzungen
 
-- IP-Symcon ab Version 4.2
+- IP-Symcon ab Version 5.5
 - Linux oder Raspberry Pi
 
 ### 3. Software-Installation
