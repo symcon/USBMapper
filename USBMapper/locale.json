@@ -4,7 +4,8 @@
 			"Devices": "Geräte",
 			"Set port": "Gesetzter Port",
 			"This module is only functional with Linux and Raspberry Pi": "Dieses Modul funktioniert nur unter Linux und Raspberry Pi",
-			"Serial Port": "Serial Port"
+			"Serial Port": "Serial Port",
+			"\nThis module should not be used as of IP-Symcon 6.0. Please use udev rules to link USB-Ports.\n\n": "\nDieses Modul sollte ab IP-Symcon 6.0 nicht mehr verwendet werden. Bitte verwenden Sie udev-Regeln zur Verknüpfung von USB-Ports.\n\n"
 		}
 	}
 }

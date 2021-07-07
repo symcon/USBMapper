@@ -1,6 +1,10 @@
 {
   "elements":
   [
+	  {
+		  "type": "Label",
+		  "label": "\nThis module should not be used as of IP-Symcon 6.0. Please use udev rules to link USB-Ports.\n\n"
+	  },
 	{ "type": "Label", "label": "This module is only functional with Linux and Raspberry Pi" },
 	{
 		"type": "List",
