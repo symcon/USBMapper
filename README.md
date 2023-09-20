@@ -6,5 +6,5 @@
 
 Folgende Module beinhaltet das USBMapper Repository:
 
-- __USB-Mapper__ ([Dokumentation](USBMapper))  
+- __USB-Mapper__ ([Dokumentation](https://www.symcon.de/de/service/dokumentation/modulreferenz/usbmapper))  
 	Setzt automatisch den korrekten USB-Port zu den eingetragenen Serial-Ports.
