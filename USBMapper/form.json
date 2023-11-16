@@ -1,47 +1,55 @@
 {
-  "elements":
-  [
-	  {
-		  "type": "Label",
-		  "label": "\nThis module should not be used as of IP-Symcon 6.0. Please use udev rules to link USB-Ports.\n\n"
-	  },
-	{ "type": "Label", "label": "This module is only functional with Linux and Raspberry Pi" },
-	{
-		"type": "List",
-		"name": "Devices",
-		"caption": "Devices",
-		"rowCount": 5,
-		"add": true,
-		"delete": true,
-		"sort": {
-			"column": "ID",
-			"direction": "ascending"
-		},
-		"columns": [{
-			"label": "Serial Port",
-			"name": "ID", 
-			"width": "60px",
-			"add": 0,
-			"edit": {
-				"type": "SelectModule",
-				"moduleID": "{6DC3D946-0D31-450F-A8C6-C42DB8D7D4F1}"
-			}
-		}, {
-			"label": "Name",
-			"name": "Name",
-			"width": "100",
-			"add": "Select device"
-		}, {
-			"label": "Set port",
-			"name": "PortID",
-			"width": "auto",
-			"add": "",
-			"edit": {
-				"type": "Select", "name": "PortName", "caption": "PortID",
-					"options": []
-			}
-		}],
-		"values": []
-	}
-  ]
+    "elements": [
+        {
+            "type": "Label",
+            "label": "\nThis module should not be used as of IP-Symcon 6.0. Please use udev rules to link USB-Ports.\n\n"
+        },
+        {
+            "type": "Label",
+            "label": "This module is only functional with Linux and Raspberry Pi"
+        },
+        {
+            "type": "List",
+            "name": "Devices",
+            "caption": "Devices",
+            "rowCount": 5,
+            "add": true,
+            "delete": true,
+            "sort": {
+                "column": "ID",
+                "direction": "ascending"
+            },
+            "columns": [
+                {
+                    "label": "Serial Port",
+                    "name": "ID",
+                    "width": "60px",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectModule",
+                        "moduleID": "{6DC3D946-0D31-450F-A8C6-C42DB8D7D4F1}"
+                    }
+                },
+                {
+                    "label": "Name",
+                    "name": "Name",
+                    "width": "100",
+                    "add": "Select device"
+                },
+                {
+                    "label": "Set port",
+                    "name": "PortID",
+                    "width": "auto",
+                    "add": "",
+                    "edit": {
+                        "type": "Select",
+                        "name": "PortName",
+                        "caption": "PortID",
+                        "options": []
+                    }
+                }
+            ],
+            "values": []
+        }
+    ]
 }

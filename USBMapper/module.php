@@ -65,6 +65,50 @@ class USBMapper extends IPSModule
         }
     }
 
+    public function GetConfigurationForm()
+    {
+        $formdata = json_decode(file_get_contents(__DIR__ . '/form.json'));
+
+        $usbDevices = $this->GetUSBDevices();
+
+        $selectUSB = [];
+        foreach ($usbDevices as $usbDevice) {
+            $selectUSB[] = ['label' => '' . substr($usbDevice['product'], 0, 16) . '(now: ' . $usbDevice['device'] . ')', 'value' => $usbDevice['id']];
+        }
+
+        $formdata->elements[2]->columns[2]->edit->options = $selectUSB;
+
+        if ($this->ReadPropertyString('Devices') != '') {
+            //Annotate existing elements
+            $devices = json_decode($this->ReadPropertyString('Devices'));
+            foreach ($devices as $device) {
+                //We only need to add annotations. Remaining data is merged from persistance automatically.
+                //Order is determinted by the order of array elements
+                if (IPS_ObjectExists($device->ID) && $device->ID !== 0) {
+
+                    // Check if the selected device is a serial port
+                    $rowColor = '';
+                    if (!IPS_GetInstance($device->ID)['ModuleInfo']['ModuleID'] == '{6DC3D946-0D31-450F-A8C6-C42DB8D7D4F1}') {
+                        $rowColor = '#FFFF00';
+                    }
+
+                    $formdata->elements[2]->values[] = [
+                        'Name'     => IPS_GetName($device->ID),
+                        'rowColor' => $rowColor,
+
+                    ];
+                } else {
+                    $formdata->elements[2]->values[] = [
+                        'Name'     => 'Not found!',
+                        'rowColor' => '#FF0000',
+                    ];
+                }
+            }
+        }
+
+        return json_encode($formdata);
+    }
+
     private function GetUSBDevices()
     {
         if (!stristr(PHP_OS, 'linux')) {
@@ -120,49 +164,5 @@ class USBMapper extends IPSModule
             }
         }
         return $result;
-    }
-
-    public function GetConfigurationForm()
-    {
-        $formdata = json_decode(file_get_contents(__DIR__ . '/form.json'));
-
-        $usbDevices = $this->GetUSBDevices();
-
-        $selectUSB = [];
-        foreach ($usbDevices as $usbDevice) {
-            $selectUSB[] = ['label' => '' . substr($usbDevice['product'], 0, 16) . '(now: ' . $usbDevice['device'] . ')', 'value' => $usbDevice['id']];
-        }
-
-        $formdata->elements[2]->columns[2]->edit->options = $selectUSB;
-
-        if ($this->ReadPropertyString('Devices') != '') {
-            //Annotate existing elements
-            $devices = json_decode($this->ReadPropertyString('Devices'));
-            foreach ($devices as $device) {
-                //We only need to add annotations. Remaining data is merged from persistance automatically.
-                //Order is determinted by the order of array elements
-                if (IPS_ObjectExists($device->ID) && $device->ID !== 0) {
-
-                    // Check if the selected device is a serial port
-                    $rowColor = '';
-                    if (!IPS_GetInstance($device->ID)['ModuleInfo']['ModuleID'] == '{6DC3D946-0D31-450F-A8C6-C42DB8D7D4F1}') {
-                        $rowColor = '#FFFF00';
-                    }
-
-                    $formdata->elements[2]->values[] = [
-                        'Name'     => IPS_GetName($device->ID),
-                        'rowColor' => $rowColor,
-
-                    ];
-                } else {
-                    $formdata->elements[2]->values[] = [
-                        'Name'     => 'Not found!',
-                        'rowColor' => '#FF0000',
-                    ];
-                }
-            }
-        }
-
-        return json_encode($formdata);
     }
 }

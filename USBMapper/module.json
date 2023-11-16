@@ -3,8 +3,7 @@
     "name": "USBMapper",
     "type": 0,
     "vendor": "",
-    "aliases": 
-    [
+    "aliases": [
         "USBMapper"
     ],
     "parentRequirements": [],
